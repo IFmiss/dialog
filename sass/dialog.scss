@@ -1,0 +1,259 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@charset "utf-8";
+@import "compass/reset";
+@import "compass/css3";
+@import "compass/layout";
+@import "compass/typography/text/ellipsis";
+@import "compass/typography/links/link-colors";
+@import 'component/_global.scss';
+
+.cpt_mask_dailog{
+	position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-family: '微软雅黑','Microsoft Yahei';
+    z-index: 1000002;
+    animation-duration: 0.6s;
+
+	.div_dailog{
+		position: fixed;
+		left: 50%;
+		top: 50%;
+		min-width: 240px;
+	    min-height: 130px;
+		@include translate(-50%,-50%);
+		@include translate3d(-50%,-50%,0);
+		// @include display-flex;
+		// @include flex-direction(column);
+		@include box-shadow(0 3px 10px #aaa);
+
+		&.no_boxShadow{
+			@include box-shadow(none);
+		}
+
+		.title_dailog{
+			font-size: 20px;
+			// @include display-flex;
+			text-overflow: ellipsis;
+			overflow:hidden;
+			white-space: nowrap;
+			padding: 10px 0;
+			height: 40px;
+		}
+		
+		.discription_dailog{
+			// @include flex-grow(1);
+			// @include flex(1);
+			padding: 14px 0 10px 0;
+			font-size: 14px;
+			text-indent: 16px;
+			line-height: 1.6;
+			// @include display-flex;
+			// @include align-items(center);
+
+			.dailog_input{
+				height: 28px;
+				width: 98%;
+				margin: 0 auto;
+				outline: none;
+				border:none;
+				@include box-shadow(none);
+				border-bottom:1px solid #aaa;
+			}
+
+			.dailog_input::-webkit-input-placeholder { /* WebKit browsers */ 
+				color: #a1a1a1; 
+			} 
+			.dailog_input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */ 
+				color: #a1a1a1; 
+			} 
+			.dailog_input::-moz-placeholder { /* Mozilla Firefox 19+ */ 
+				color: #a1a1a1; 
+			} 
+			.dailog_input:-ms-input-placeholder { /* Internet Explorer 10+ */ 
+				color: #a1a1a1; 
+			} 
+		}
+	
+		.dailog_divOperation{
+			@include display-flex;
+			text-overflow: ellipsis;
+			overflow:hidden;
+			white-space: nowrap;
+			padding:3px 2px;;
+			justify-content: flex-end;
+			float: right;
+			height: 36px;
+			
+			.btn_span{
+				padding: 6px 10px;
+				-webkit-border-radius: 2px;
+				-moz-border-radius: 2px;
+				border-radius: 2px;
+				cursor: pointer;
+				font-size: 14px;
+				line-height: normal;
+				@include user-select(none);
+
+				&:first-child{
+					margin-right:10px;
+				}
+			}
+		}
+	}
+
+	&.primary{
+		.div_dailog{
+			@include box-shadow(0px 0px 3px 0px $dw-color-primary);
+
+			&.no_boxShadow{
+				@include box-shadow(0px 0px 0px 0px #fff);
+			}
+		}
+
+		.title_dailog{
+			color: #588CD2;
+			border-bottom:1px dashed $dw-color-primary;
+		}
+
+		.discription_dailog{
+			color: #313234;
+		}
+
+		.dailog_divOperation{
+			.btn_span{
+				// @include box-shadow(0 0 1px 1px #588CD2);
+				// color: #313234;
+				color: #fff;
+				background: $dw-color-primary;
+
+				&:hover{
+					background: $dw-color-primary-hover;
+				}
+
+				&.no_bg{
+					background: #fff;
+					color: #333;
+				}
+			}
+		}
+	}
+
+	&.success{
+		.div_dailog{
+			@include box-shadow(0px 0px 3px 0px $dw-color-success);
+
+			&.no_boxShadow{
+				@include box-shadow(0px 0px 0px 0px #fff);
+			}
+		}
+
+		.title_dailog{
+			color: #6EB279;
+			border-bottom:1px dashed $dw-color-success;
+		}
+
+		.discription_dailog{
+			color: #283528;
+		}
+
+		.dailog_divOperation{
+			.btn_span{
+				// @include box-shadow(0 0 1px 1px #6EB279);
+				// color: #283528;
+				color: #fff;
+				background: $dw-color-success;
+
+				&:hover{
+					background: $dw-color-success-hover;
+				}
+
+				&.no_bg{
+					background: #fff;
+					color: #333;
+				}
+			}
+		}
+	}
+
+	&.danger{
+		.div_dailog{
+			@include box-shadow(0px 0px 3px 0px $dw-color-danger);
+
+			&.no_boxShadow{
+				@include box-shadow(0px 0px 0px 0px #fff);
+			}
+		}
+
+		.title_dailog{
+			color: #C54D54;
+			border-bottom:1px dashed $dw-color-danger;
+		}
+
+		.discription_dailog{
+			color: #4F3536;
+		}
+
+		.dailog_divOperation{
+			.btn_span{
+				// @include box-shadow(0 0 1px 1px #C54D54);
+				// color: #4F3536;
+				color: #fff;
+				background: $dw-color-danger;
+
+				&:hover{
+					background: $dw-color-danger-hover;
+				}
+
+				&.no_bg{
+					background: #fff;
+					color: #333;
+				}
+			}
+		}
+	}
+
+
+	&.warning{
+		.div_dailog{
+			@include box-shadow(0px 0px 3px 0px $dw-color-warning);
+
+			&.no_boxShadow{
+				@include box-shadow(0px 0px 0px 0px #fff);
+			}
+		}
+
+		.title_dailog{
+			color:$dw-color-warning;
+			border-bottom:1px dashed $dw-color-warning;
+		}
+
+		.discription_dailog{
+			color: #4F3536;
+		}
+
+		.dailog_divOperation{
+			.btn_span{
+				// @include box-shadow(0 0 1px 1px #C54D54);
+				// color: #4F3536;
+				color: #fff;
+				background: $dw-color-warning;
+
+				&:hover{
+					background: $dw-color-warning-hover;
+				}
+
+				&.no_bg{
+					background: #fff;
+					color: #333;
+				}
+			}
+		}
+	}
+}
