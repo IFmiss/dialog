@@ -12,7 +12,7 @@
 	      maskBg:             'rgba(0,0,0,0.6)',          //遮罩层背景色
 	      dailogBg:           '#fff',                     //弹出框的背景色
 	      type:               'defalut',                  //类型 defalut primary   success  danger  warning
-	      zIndex:             '10000011',                 //层级
+	      zIndex:             10000011,                   //层级
 	      hideScroll: 	  	  false, 					  //是否关闭滚动条
 	      isBtnHasBgColor: 	  true, 					  //确定  取消按钮是否有背景色
 	      showBoxShadow: 	  false, 					  //弹窗是否显示boxshadow
