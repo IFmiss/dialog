@@ -11,7 +11,20 @@
 @import "compass/typography/links/link-colors";
 @import 'component/_global.scss';
 
+.cpt-dw-dialog-mask{
+	position: fixed;
+	width:100%;
+	height:100%;
+	top:0;
+	left:0;
+	bottom:0;
+	right:0;
+	@include translate3d(0,0,0);
+}
+
 .cpt_mask_dailog{
+	-webkit-overflow-scrolling: touch;
+	-webkit-tap-highlight-color: transparent;
 	position: fixed;
     top: 0;
     left: 0;
@@ -20,94 +33,97 @@
     font-family: '微软雅黑','Microsoft Yahei';
     z-index: 1000002;
     animation-duration: 0.6s;
+}
 
-	.div_dailog{
-		position: fixed;
-		left: 50%;
-		top: 50%;
-		min-width: 240px;
-	    min-height: 130px;
-		@include translate(-50%,-50%);
-		@include translate3d(-50%,-50%,0);
+.div_dailog{
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	min-width: 240px;
+    min-height: 130px;
+	@include translate(-50%,-50%);
+	// @include translate3d(-50%,-50%,0);
+	// @include display-flex;
+	// @include flex-direction(column);
+	@include box-shadow(0 3px 10px #aaa);
+
+	&.no_boxShadow{
+		@include box-shadow(none);
+	}
+
+	.title_dailog{
+		font-size: 20px;
 		// @include display-flex;
-		// @include flex-direction(column);
-		@include box-shadow(0 3px 10px #aaa);
-
-		&.no_boxShadow{
-			@include box-shadow(none);
-		}
-
-		.title_dailog{
-			font-size: 20px;
-			// @include display-flex;
-			text-overflow: ellipsis;
-			overflow:hidden;
-			white-space: nowrap;
-			padding: 10px 0;
-			height: 40px;
-		}
-		
-		.discription_dailog{
-			// @include flex-grow(1);
-			// @include flex(1);
-			padding: 14px 0 10px 0;
-			font-size: 14px;
-			text-indent: 16px;
-			line-height: 1.6;
-			// @include display-flex;
-			// @include align-items(center);
-
-			.dailog_input{
-				height: 28px;
-				width: 98%;
-				margin: 0 auto;
-				outline: none;
-				border:none;
-				@include box-shadow(none);
-				border-bottom:1px solid #aaa;
-			}
-
-			.dailog_input::-webkit-input-placeholder { /* WebKit browsers */ 
-				color: #a1a1a1; 
-			} 
-			.dailog_input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */ 
-				color: #a1a1a1; 
-			} 
-			.dailog_input::-moz-placeholder { /* Mozilla Firefox 19+ */ 
-				color: #a1a1a1; 
-			} 
-			.dailog_input:-ms-input-placeholder { /* Internet Explorer 10+ */ 
-				color: #a1a1a1; 
-			} 
-		}
+		text-overflow: ellipsis;
+		overflow:hidden;
+		white-space: nowrap;
+		padding: 10px 0;
+		height: 40px;
+	}
 	
-		.dailog_divOperation{
-			@include display-flex;
-			text-overflow: ellipsis;
-			overflow:hidden;
-			white-space: nowrap;
-			padding:3px 2px;;
-			justify-content: flex-end;
-			float: right;
-			height: 36px;
-			
-			.btn_span{
-				padding: 6px 10px;
-				-webkit-border-radius: 2px;
-				-moz-border-radius: 2px;
-				border-radius: 2px;
-				cursor: pointer;
-				font-size: 14px;
-				line-height: normal;
-				@include user-select(none);
+	.discription_dailog{
+		// @include flex-grow(1);
+		// @include flex(1);
+		padding: 14px 0 10px 0;
+		font-size: 14px;
+		text-indent: 16px;
+		line-height: 1.6;
+		// @include display-flex;
+		// @include align-items(center);
 
-				&:first-child{
-					margin-right:10px;
-				}
+		.dailog_input{
+			height: 28px;
+			width: 98%;
+			margin: 0 auto;
+			outline: none;
+			border:none;
+			@include box-shadow(none);
+			border-bottom:1px solid #aaa;
+		}
+
+		.dailog_input::-webkit-input-placeholder { /* WebKit browsers */ 
+			color: #a1a1a1; 
+		} 
+		.dailog_input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */ 
+			color: #a1a1a1; 
+		} 
+		.dailog_input::-moz-placeholder { /* Mozilla Firefox 19+ */ 
+			color: #a1a1a1; 
+		} 
+		.dailog_input:-ms-input-placeholder { /* Internet Explorer 10+ */ 
+			color: #a1a1a1; 
+		} 
+	}
+
+	.dailog_divOperation{
+		@include display-flex;
+		text-overflow: ellipsis;
+		overflow:hidden;
+		white-space: nowrap;
+		padding:3px 2px;;
+		justify-content: flex-end;
+		float: right;
+		height: 32px;
+		
+		.btn_span{
+			@include display-flex;
+			@justify-content(center);
+			@include align-items(center);
+			padding: 3px 10px;
+			-webkit-border-radius: 2px;
+			-moz-border-radius: 2px;
+			border-radius: 2px;
+			cursor: pointer;
+			font-size: 14px;
+			line-height: 18px;
+			@include user-select(none);
+
+			&:first-child{
+				margin-right:10px;
 			}
 		}
 	}
-
+	
 	&.primary{
 		.div_dailog{
 			@include box-shadow(0px 0px 3px 0px $dw-color-primary);
@@ -219,7 +235,6 @@
 		}
 	}
 
-
 	&.warning{
 		.div_dailog{
 			@include box-shadow(0px 0px 3px 0px $dw-color-warning);
@@ -257,3 +272,4 @@
 		}
 	}
 }
+

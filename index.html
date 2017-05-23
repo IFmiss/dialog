@@ -3,19 +3,35 @@
 <head>
 	<meta charset="UTF-8">
 	<title>弹窗UI测试</title>
+	<link rel="shortcut icon" href="http://www.daiwei.org/index/images/logo/favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
 	<link rel="stylesheet" href="http://www.daiwei.org/global/css/global.css">
+	<!-- <link rel="stylesheet" href="http://www.daiwei.org/global/css/animate.css"> -->
+	<link rel="stylesheet" href="../centermenu/css/animate.css">
 	<link rel="stylesheet" href="css/dialog.css">
 </head>
 	
 	<style>
+		body,html{
+			/*display: flex;
+			justify-content: center;
+			align-items: center;*/
+		}
+
 		.div-testDialog{
 			width: 500px;
 			height: auto;
-			margin: 300px auto;
+			margin: 50px auto;
 		}
 
 		.div-testDialog button{
 			margin:  10px;
+		}
+
+		@media screen and ( max-width: 460px){
+			.div-testDialog{
+				width: 90%;
+			}
 		}
 	</style>
 
@@ -40,6 +56,8 @@
 		<button class="dw-btn btn-primary has-hover" onclick="javascript:$('body').dailog({type:'primary',showBoxShadow:true,animateStyle:'none'})">无进入动画</button>
 
 		<button class="dw-btn btn-warning has-hover" onclick="javascript:$('body').dailog({type:'warning',showBoxShadow:true,animateStyle:'none',bottons:['确定'],discription:'也许有点问题!'})">单个按钮</button>
+
+		<button class="dw-btn btn-primary has-hover" onclick="javascript:$('body').dailog({type:'warning',showBoxShadow:true,animateStyle:'none',bottons:['确定'],discription:'也许有点问题!',animateIn:'rotateInUpLeft-hastrans',animateOut:'rotateOutUpLeft-hastrans'})">animate动画效果zoomIn-hastrans</button>
 	</div>
 </body>
 <script src="http://www.daiwei.org/global/js/jquery.js"></script>
