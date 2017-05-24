@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="http://www.daiwei.org/global/css/global.css">
 	<!-- <link rel="stylesheet" href="http://www.daiwei.org/global/css/animate.css"> -->
 	<link rel="stylesheet" href="../centermenu/css/animate.css">
-	<link rel="stylesheet" href="css/dialog.css">
+	<link rel="stylesheet" href="css/dailog.css">
 </head>
 	
 	<style>
@@ -18,25 +18,25 @@
 			align-items: center;*/
 		}
 
-		.div-testDialog{
+		.div-testDailog{
 			width: 500px;
 			height: auto;
 			margin: 50px auto;
 		}
 
-		.div-testDialog button{
+		.div-testDailog button{
 			margin:  10px;
 		}
 
 		@media screen and ( max-width: 460px){
-			.div-testDialog{
+			.div-testDailog{
 				width: 90%;
 			}
 		}
 	</style>
 
 <body>
-	<div class="div-testDialog">
+	<div class="div-testDailog">
 		<button class="dw-btn has-hover disabled input-reverse-tofull" onclick="javascript:$('body').dailog({type:'defalut'})">默认的弹窗</button>
 		<button class="dw-btn btn-success has-hover" onclick="javascript:$('body').dailog({type:'success'})">success</button>
 		<button class="dw-btn btn-primary has-hover" onclick="javascript:$('body').dailog({type:'primary'})">primary</button>
@@ -61,5 +61,5 @@
 	</div>
 </body>
 <script src="http://www.daiwei.org/global/js/jquery.js"></script>
-<script src="js/dialog.js"></script>
+<script src="js/dailog.js"></script>
 </html>
