@@ -22,4 +22,4 @@
 * 返回值ret  ret.index 点击的索引, ret.input.status  (如果有输入框为1，否则为0),  ret.input.value  输入框的值
  
 预览地址
-http://daiwei.org/components/dialog/
+http://daiwei.org/components/dailog/
