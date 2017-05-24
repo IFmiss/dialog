@@ -62,14 +62,14 @@
     	defaultvalue._showScroll = function(isShow){
     		var isshow = isshow || 'false';
     		if(isShow){
-    			$('body,html').css({height:'auto',overflow:'auto'});
+    			$('body,html').css({"min-height":0,overflow:'auto'});
 
     			$(document.body).css({
     				'border-right':'none',
     			})
     		}else{
     			var scrollWidth = defaultvalue._getScrollWidth();
-    			$('body,html').css({height:'100%',overflow:'hidden'});
+    			$('body,html').css({"min-height":"100%",overflow:'hidden'});
     			$('body').css({
     				'border-right':scrollWidth+'px solid transparent',
     			})
@@ -389,7 +389,7 @@
                     $('.cpt-dw-dialog-mask').remove();
 
                     //可滚动
-                    $('body,html').css({height:'auto',overflow:'auto'});
+                    $('body,html').css({"min-height":0,overflow:'auto'});
                     $(document.body).css({
                         'border-right':'none',
                     })
@@ -398,7 +398,7 @@
                 _this.dailog_div.remove();
                 $('.cpt-dw-dialog-mask').remove();
                 //可滚动
-                $('body,html').css({height:'auto',overflow:'auto'});
+                $('body,html').css({"min-height":0,overflow:'auto'});
                 $(document.body).css({
                     'border-right':'none',
                 });isLowerIe9 
