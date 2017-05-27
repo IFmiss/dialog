@@ -223,6 +223,7 @@
 		    	stopPropagation:'aaa',
 		    	preventDefault:'click',
 		    	background:opt.maskBg,
+		    	duration:opt.duration,
                 zIndex:opt.zIndex - 1, 
                 closeAnimate: function(){
 	    			_this.dailog_div.addClass(opt.animateOut).on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',function(){
