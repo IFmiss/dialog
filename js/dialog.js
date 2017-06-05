@@ -139,10 +139,10 @@
         return (!window.FormData);
     };
 
-	$.fn.dailog = function(options,callBack){
+	$.fn.dialog = function(options,callBack){
 	    var _this = this;
 	    var $this = $(this);
-	    var defaultDailog = {
+	    var defaultDialog = {
 	      width:              280,                    	  //宽度
 	      height:             'auto',                     //高度
 	      padding:            '10px 16px',                //padding
@@ -151,7 +151,7 @@
 	      borderRadius:       '4px',                      //圆角
 	      bottons:            ['确定','取消'],            //按钮信息
 	      maskBg:             'rgba(0,0,0,0.6)',          //遮罩层背景色
-	      dailogBg:           '#fff',                     //弹出框的背景色
+	      dialogBg:           '#fff',                     //弹出框的背景色
 	      type:               'defalut',                  //类型 defalut primary   success  danger  warning
 	      zIndex:             10000011,                   //层级
 	      hideScroll: 	  	  false, 					  //是否关闭滚动条
@@ -165,7 +165,7 @@
 	      duration:    		  300,						  //动画持续的时间
 	    };
 
-	    var opt = $.extend(defaultDailog,options||{});
+	    var opt = $.extend(defaultDialog,options||{});
 
 	    // 设置btn是否有颜色
 	    var btn_className = opt.isBtnHasBgColor?'':'no_bg';
@@ -201,7 +201,7 @@
 	    var _isBoxShadow = function(){
 	    	// 是否显示boxshadow
 		    if(!opt.showBoxShadow){
-		    	_this.dailog_div.addClass('no_boxShadow');
+		    	_this.dialog_div.addClass('no_boxShadow');
 		    };
 	    }
 
@@ -226,8 +226,8 @@
 		    	duration:opt.duration,
                 zIndex:opt.zIndex - 1, 
                 closeAnimate: function(){
-	    			_this.dailog_div.addClass(opt.animateOut).on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',function(){
-		    			_this.dailog_div.remove();
+	    			_this.dialog_div.addClass(opt.animateOut).on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',function(){
+		    			_this.dialog_div.remove();
 		    		});
 	    		},
 	    	});
@@ -236,11 +236,11 @@
 		    // 判断按钮是否超出两个
 		    _overflowBtn();
 
-		     _this.dailog_div = $("<div class='div_dailog animated "+opt.type+" "+opt.animateIn+"'></div>").css({
+		     _this.dialog_div = $("<div class='div_dialog animated "+opt.type+" "+opt.animateIn+"'></div>").css({
 		     	// 'visibility':'hidden',
 				'width':opt.width,
 				'height':opt.height,
-				'background':opt.dailogBg,
+				'background':opt.dialogBg,
 				'-moz-border-radius':opt.borderRadius,
 				'-webkit-border-radius':opt.borderRadius,
 				'border-radius':opt.borderRadius,
@@ -254,28 +254,28 @@
 				'transform':'translate(-50%,-50%)',
 		    }).appendTo($this);
 
-		    _this.title_dailog = $("<div class='title_dailog'></div>").html(opt.title).appendTo(_this.dailog_div);
+		    _this.title_dialog = $("<div class='title_dialog'></div>").html(opt.title).appendTo(_this.dialog_div);
 
 		    if(!opt.isInput){
-		    	_this.discription_dailog = $("<div class='discription_dailog'></div>").html(opt.discription).appendTo(_this.dailog_div);
+		    	_this.discription_dialog = $("<div class='discription_dialog'></div>").html(opt.discription).appendTo(_this.dialog_div);
 		    }else{
-		    	_this.discription_dailog = $("<div class='discription_dailog'></div>").css({
+		    	_this.discription_dialog = $("<div class='discription_dialog'></div>").css({
 		    		'text-indent':0,
-		    	}).appendTo(_this.dailog_div);
-		    	_this.input_dailog = $("<input type='text' class='dailog_input' placeholder="+opt.inputPlaceholder+">").appendTo(_this.discription_dailog);
+		    	}).appendTo(_this.dialog_div);
+		    	_this.input_dialog = $("<input type='text' class='dialog_input' placeholder="+opt.inputPlaceholder+">").appendTo(_this.discription_dialog);
 		    }
 		    
-		    _this.dailog_divOperation = $("<div class='dailog_divOperation'></div>").appendTo(_this.dailog_div);
+		    _this.dialog_divOperation = $("<div class='dialog_divOperation'></div>").appendTo(_this.dialog_div);
 
 		    if(!(opt.bottons.length === 2)){
-		     	_this.firstBtn = $("<span class='btn_span "+btn_className+"'></span>").html(opt.bottons[0]).attr({'data-name':opt.bottons[0]}).appendTo(_this.dailog_divOperation);
+		     	_this.firstBtn = $("<span class='btn_span "+btn_className+"'></span>").html(opt.bottons[0]).attr({'data-name':opt.bottons[0]}).appendTo(_this.dialog_divOperation);
 		    }else{
-		     	_this.firstBtn = $("<span class='btn_span "+btn_className+"'></span>").html(opt.bottons[0]).attr({'data-name':opt.bottons[0]}).appendTo(_this.dailog_divOperation);
-		     	_this.secondBtn = $("<span class='btn_span "+btn_className+"'></span>").html(opt.bottons[1]).attr({'data-name':opt.bottons[1]}).appendTo(_this.dailog_divOperation);
+		     	_this.firstBtn = $("<span class='btn_span "+btn_className+"'></span>").html(opt.bottons[0]).attr({'data-name':opt.bottons[0]}).appendTo(_this.dialog_divOperation);
+		     	_this.secondBtn = $("<span class='btn_span "+btn_className+"'></span>").html(opt.bottons[1]).attr({'data-name':opt.bottons[1]}).appendTo(_this.dialog_divOperation);
 		    }
 
 		 //    setTimeout(function(){
-			// 	_this.dailog_div.css({
+			// 	_this.dialog_div.css({
 			// 		'visibility':'visible'
 			// 	}).addClass("animated "+opt.animateIn+"");
 			// },100);
@@ -299,11 +299,11 @@
 		    // 判断按钮是否超出两个
 		    _overflowBtn();
 
-		     _this.dailog_div = $("<div class='div_dailog "+opt.type+" '></div>").css({
+		     _this.dialog_div = $("<div class='div_dialog "+opt.type+" '></div>").css({
 		     	'visibility':'hidden',
 				'width':opt.width,
 				'height':opt.height,
-				'background':opt.dailogBg,
+				'background':opt.dialogBg,
 				'-moz-border-radius':opt.borderRadius,
 				'-webkit-border-radius':opt.borderRadius,
 				'border-radius':opt.borderRadius,
@@ -317,28 +317,28 @@
 				'transform':'translate(-50%,-50%)',
 		    }).appendTo($this);
 
-		    _this.title_dailog = $("<div class='title_dailog'></div>").html(opt.title).appendTo(_this.dailog_div);
+		    _this.title_dialog = $("<div class='title_dialog'></div>").html(opt.title).appendTo(_this.dialog_div);
 
 		    if(!opt.isInput){
-		    	_this.discription_dailog = $("<div class='discription_dailog'></div>").html(opt.discription).appendTo(_this.dailog_div);
+		    	_this.discription_dialog = $("<div class='discription_dialog'></div>").html(opt.discription).appendTo(_this.dialog_div);
 		    }else{
-		    	_this.discription_dailog = $("<div class='discription_dailog'></div>").css({
+		    	_this.discription_dialog = $("<div class='discription_dialog'></div>").css({
 		    		'text-indent':0,
-		    	}).appendTo(_this.dailog_div);
-		    	_this.input_dailog = $("<input type='text' class='dailog_input' placeholder="+opt.inputPlaceholder+">").appendTo(_this.discription_dailog);
+		    	}).appendTo(_this.dialog_div);
+		    	_this.input_dialog = $("<input type='text' class='dialog_input' placeholder="+opt.inputPlaceholder+">").appendTo(_this.discription_dialog);
 		    }
 		    
-		    _this.dailog_divOperation = $("<div class='dailog_divOperation'></div>").appendTo(_this.dailog_div);
+		    _this.dialog_divOperation = $("<div class='dialog_divOperation'></div>").appendTo(_this.dialog_div);
 
 		    if(!(opt.bottons.length === 2)){
-		     	_this.firstBtn = $("<span class='btn_span "+btn_className+"'></span>").html(opt.bottons[0]).attr({'data-name':opt.bottons[0]}).appendTo(_this.dailog_divOperation);
+		     	_this.firstBtn = $("<span class='btn_span "+btn_className+"'></span>").html(opt.bottons[0]).attr({'data-name':opt.bottons[0]}).appendTo(_this.dialog_divOperation);
 		    }else{
-		     	_this.firstBtn = $("<span class='btn_span "+btn_className+"'></span>").html(opt.bottons[0]).attr({'data-name':opt.bottons[0]}).appendTo(_this.dailog_divOperation);
-		     	_this.secondBtn = $("<span class='btn_span "+btn_className+"'></span>").html(opt.bottons[1]).attr({'data-name':opt.bottons[1]}).appendTo(_this.dailog_divOperation);
+		     	_this.firstBtn = $("<span class='btn_span "+btn_className+"'></span>").html(opt.bottons[0]).attr({'data-name':opt.bottons[0]}).appendTo(_this.dialog_divOperation);
+		     	_this.secondBtn = $("<span class='btn_span "+btn_className+"'></span>").html(opt.bottons[1]).attr({'data-name':opt.bottons[1]}).appendTo(_this.dialog_divOperation);
 		    }
 
 		    setTimeout(function(){
-				_this.dailog_div.css({
+				_this.dialog_div.css({
 					'visibility':'visible'
 				}).addClass("animated "+opt.animateIn+"");
 			},100);
@@ -354,14 +354,14 @@
 	    }
 
 	    // 点击的回调
-	    _this.dailog_divOperation.children().on('click',function(e){
+	    _this.dialog_divOperation.children().on('click',function(e){
 	      	var name = $(this).attr('data-name');
 			//获取点击的索引
 			// _this.bottonIndex(name);
 			_btnIndex(name);
 
-			var inputstatus = _this.input_dailog? 1:0;
-			var inputvalue = inputstatus? _this.input_dailog.val():'';
+			var inputstatus = _this.input_dialog? 1:0;
+			var inputvalue = inputstatus? _this.input_dialog.val():'';
 
 			// 设置返回值
 			var ret = {
@@ -382,8 +382,8 @@
 
 
 			if(!isLowerIe9()){
-                _this.dailog_div.addClass(opt.animateOut).on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',function(){
-                    _this.dailog_div.remove();
+                _this.dialog_div.addClass(opt.animateOut).on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',function(){
+                    _this.dialog_div.remove();
                 });
 
                 $('.cpt-dw-dialog-mask').addClass("fadeOut").on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',function(){
@@ -396,7 +396,7 @@
                     })
                 });
             }else{
-                _this.dailog_div.remove();
+                _this.dialog_div.remove();
                 $('.cpt-dw-dialog-mask').remove();
                 //可滚动
                 $('body,html').css({"min-height":0,overflow:'auto'});

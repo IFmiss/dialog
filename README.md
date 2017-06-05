@@ -7,7 +7,7 @@
 * borderRadius:    弹窗的圆角    字符串类型
 * bottons:   弹窗的按钮    数组类型  ['确定','取消']
 * maskBg:    浮层的背景色    字符串类型
-* dailogBg:    弹窗的背景色    字符串类型
+* dialogBg:    弹窗的背景色    字符串类型
 * type:   弹窗的样式   字符串类型   defalut   primary   success   danger   warning
 * zIndex:   弹窗的层级     number
 * hideScroll:    是否在弹窗的时候  关闭右侧的滚动条    bool
@@ -22,4 +22,4 @@
 * 返回值ret  ret.index 点击的索引, ret.input.status  (如果有输入框为1，否则为0),  ret.input.value  输入框的值
  
 预览地址
-http://daiwei.org/components/dailog/
+http://daiwei.org/components/dialog/
