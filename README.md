@@ -1,4 +1,9 @@
+![](https://img.shields.io/badge/IE-9%2B-orange.svg)
+
 # dialog
+
+![](https://github.com/IFmiss/dialog/blob/master/img/avuOu1keKL.gif)
+
 一个小巧简约的弹窗插件
 * width:   弹窗的宽度   number
 * padding:  弹窗元素的 padding   字符串类型
