@@ -1,5 +1,8 @@
 ![](https://img.shields.io/badge/IE-9%2B-orange.svg)
 
+预览地址
+http://daiwei.org/components/dialog/
+
 # dialog
 
 ![](https://github.com/IFmiss/dialog/blob/master/img/avuOu1keKL.gif)
@@ -25,6 +28,4 @@
 #回调
 * callBack:function(ret){}   
 * 返回值ret  ret.index 点击的索引, ret.input.status  (如果有输入框为1，否则为0),  ret.input.value  输入框的值
- 
-预览地址
-http://daiwei.org/components/dialog/
+
