@@ -13,7 +13,7 @@ http://daiwei.org/components/dialog/
 * title:   弹窗的title名称   字符串类型
 * discription:   弹窗的描述    字符串类型
 * borderRadius:    弹窗的圆角    字符串类型
-* bottons:   弹窗的按钮    数组类型  ['确定','取消']
+* buttons:   弹窗的按钮    数组类型  ['确定','取消']
 * maskBg:    浮层的背景色    字符串类型
 * dialogBg:    弹窗的背景色    字符串类型
 * type:   弹窗的样式   字符串类型   defalut   primary   success   danger   warning
