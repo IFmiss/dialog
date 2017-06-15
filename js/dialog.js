@@ -149,7 +149,7 @@
 	      title:              '提示!',                    //提醒信息
 	      discription:        '这是弹窗的描述!',          //描述
 	      borderRadius:       '4px',                      //圆角
-	      bottons:            ['确定','取消'],            //按钮信息
+	      buttons:            ['确定','取消'],            //按钮信息
 	      maskBg:             'rgba(0,0,0,0.6)',          //遮罩层背景色
 	      dialogBg:           '#fff',                     //弹出框的背景色
 	      type:               'defalut',                  //类型 defalut primary   success  danger  warning
@@ -192,8 +192,8 @@
 	    }
 
 	    var _overflowBtn = function(){
-	    	// bottons超过两个提示
-		    if(opt.bottons.length>2){
+	    	// buttons超过两个提示
+		    if(opt.buttons.length>2){
 		       $dw.showMessage('按钮的最多显示上限不超过2个',3000,false);
 		    }
 	    }
@@ -208,8 +208,8 @@
 	    var _btnIndex = function(name){
 	    	//获取点击的索引
 	      	var btnName = name || '';
-	      		for(var i = 0;i<opt.bottons.length;i++){
-	        		if(btnName === opt.bottons[i]){
+	      		for(var i = 0;i<opt.buttons.length;i++){
+	        		if(btnName === opt.buttons[i]){
 	          		btnIndex = i;
 	        	}
 	      	}
@@ -267,11 +267,11 @@
 		    
 		    _this.dialog_divOperation = $("<div class='dialog_divOperation'></div>").appendTo(_this.dialog_div);
 
-		    if(!(opt.bottons.length === 2)){
-		     	_this.firstBtn = $("<span class='btn_span "+btn_className+"'></span>").html(opt.bottons[0]).attr({'data-name':opt.bottons[0]}).appendTo(_this.dialog_divOperation);
+		    if(!(opt.buttons.length === 2)){
+		     	_this.firstBtn = $("<span class='btn_span "+btn_className+"'></span>").html(opt.buttons[0]).attr({'data-name':opt.buttons[0]}).appendTo(_this.dialog_divOperation);
 		    }else{
-		     	_this.firstBtn = $("<span class='btn_span "+btn_className+"'></span>").html(opt.bottons[0]).attr({'data-name':opt.bottons[0]}).appendTo(_this.dialog_divOperation);
-		     	_this.secondBtn = $("<span class='btn_span "+btn_className+"'></span>").html(opt.bottons[1]).attr({'data-name':opt.bottons[1]}).appendTo(_this.dialog_divOperation);
+		     	_this.firstBtn = $("<span class='btn_span "+btn_className+"'></span>").html(opt.buttons[0]).attr({'data-name':opt.buttons[0]}).appendTo(_this.dialog_divOperation);
+		     	_this.secondBtn = $("<span class='btn_span "+btn_className+"'></span>").html(opt.buttons[1]).attr({'data-name':opt.buttons[1]}).appendTo(_this.dialog_divOperation);
 		    }
 
 		 //    setTimeout(function(){
@@ -330,11 +330,11 @@
 		    
 		    _this.dialog_divOperation = $("<div class='dialog_divOperation'></div>").appendTo(_this.dialog_div);
 
-		    if(!(opt.bottons.length === 2)){
-		     	_this.firstBtn = $("<span class='btn_span "+btn_className+"'></span>").html(opt.bottons[0]).attr({'data-name':opt.bottons[0]}).appendTo(_this.dialog_divOperation);
+		    if(!(opt.buttons.length === 2)){
+		     	_this.firstBtn = $("<span class='btn_span "+btn_className+"'></span>").html(opt.buttons[0]).attr({'data-name':opt.buttons[0]}).appendTo(_this.dialog_divOperation);
 		    }else{
-		     	_this.firstBtn = $("<span class='btn_span "+btn_className+"'></span>").html(opt.bottons[0]).attr({'data-name':opt.bottons[0]}).appendTo(_this.dialog_divOperation);
-		     	_this.secondBtn = $("<span class='btn_span "+btn_className+"'></span>").html(opt.bottons[1]).attr({'data-name':opt.bottons[1]}).appendTo(_this.dialog_divOperation);
+		     	_this.firstBtn = $("<span class='btn_span "+btn_className+"'></span>").html(opt.buttons[0]).attr({'data-name':opt.buttons[0]}).appendTo(_this.dialog_divOperation);
+		     	_this.secondBtn = $("<span class='btn_span "+btn_className+"'></span>").html(opt.buttons[1]).attr({'data-name':opt.buttons[1]}).appendTo(_this.dialog_divOperation);
 		    }
 
 		    setTimeout(function(){
