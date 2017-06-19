@@ -220,8 +220,8 @@
 
 		    showMask({
 		    	ele:$this,
-		    	stopPropagation:'aaa',
-		    	preventDefault:'click',
+		    	stopPropagation:'touchmove',
+		    	preventDefault:'click touchmove',
 		    	background:opt.maskBg,
 		    	duration:opt.duration,
                 zIndex:opt.zIndex - 1, 
