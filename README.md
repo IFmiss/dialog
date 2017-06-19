@@ -1,7 +1,11 @@
-![](https://img.shields.io/badge/IE-9%2B-orange.svg)
+![](https://img.shields.io/badge/version-1.1-blue.svg) ![](https://img.shields.io/badge/IE-9%2B-orange.svg)<br>
 
 预览地址
 http://daiwei.org/components/dialog/
+
+手机扫码预览<br>
+
+![](https://github.com/IFmiss/dialog/blob/master/img/1497856033.png)
 
 # dialog
 
