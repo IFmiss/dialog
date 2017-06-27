@@ -191,12 +191,6 @@
 	    	}
 	    }
 
-	    var _colseScroll = function(){
-	    	$('body,html').css({
-	    		overflow:'auto',
-	    	});
-	    }
-
 	    var _overflowBtn = function(){
 	    	// buttons超过两个提示
 		    if(opt.buttons.length>2){
@@ -378,8 +372,6 @@
 				}
 			};
 
-			_colseScroll();
-
 			//未写回调函数则不会有效果
 			if(typeof(callBack) === 'function'){
 				//执行回调函数
@@ -408,7 +400,7 @@
                 $('body,html').css({"min-height":0,overflow:'auto'});
                 $(document.body).css({
                     'border-right':'none',
-                });isLowerIe9 
+                }); 
             }
 	    });
 
