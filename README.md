@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/version-1.1-blue.svg) ![](https://img.shields.io/badge/IE-9%2B-orange.svg)<br>
+![](https://img.shields.io/badge/version-1.2-blue.svg) ![](https://img.shields.io/badge/IE-9%2B-orange.svg)<br>
 
 预览地址
 http://daiwei.org/components/dialog/
