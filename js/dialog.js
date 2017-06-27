@@ -60,19 +60,25 @@
     	};
 
     	defaultvalue._showScroll = function(isShow){
-    		var isshow = isshow || 'false';
-    		if(isShow){
-    			$('body,html').css({"min-height":0,overflow:'auto'});
+    		var eleHeight = window.screen.availHeight ;			//浏览器可以工作的区域高度
+    		var bodyHeight = document.body.clientHeight || document.documentElement.clientHeight;		//网页的实际高度
+    		if(bodyHeight > eleHeight) {
+    			var isshow = isshow || 'false';
+	    		if(isShow){
+	    			$('body,html').css({"min-height":0,overflow:'auto'});
 
-    			$(document.body).css({
-    				'border-right':'none',
-    			})
+	    			$(document.body).css({
+	    				'border-right':'none',
+	    			})
+	    		}else{
+	    			var scrollWidth = defaultvalue._getScrollWidth();
+	    			$('body,html').css({"min-height":"100%",overflow:'hidden'});
+	    			$('body').css({
+	    				'border-right':scrollWidth+'px solid transparent',
+	    			})
+	    		}
     		}else{
-    			var scrollWidth = defaultvalue._getScrollWidth();
-    			$('body,html').css({"min-height":"100%",overflow:'hidden'});
-    			$('body').css({
-    				'border-right':scrollWidth+'px solid transparent',
-    			})
+    			return
     		}
     	};
 
