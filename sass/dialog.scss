@@ -67,7 +67,7 @@
 		padding: 14px 0 10px 0;
 		font-size: 14px;
 		text-indent: 16px;
-		line-height: 1.6;
+		line-height: 1.5;
 		// @include display-flex;
 		// @include align-items(center);
 
@@ -100,19 +100,21 @@
 		text-overflow: ellipsis;
 		overflow:hidden;
 		white-space: nowrap;
-		padding:3px 2px;;
 		justify-content: flex-end;
 		float: right;
-		height: 32px;
+		min-height: 36px;
+		line-height: 36px;
+		// height: 32px;
 		
 		.btn_span{
 			@include display-flex;
 			@justify-content(center);
 			@include align-items(center);
-			padding: 3px 10px;
 			-webkit-border-radius: 2px;
 			-moz-border-radius: 2px;
 			border-radius: 2px;
+			height: 20px;
+			@include box-sizing(content-box);
 			cursor: pointer;
 			font-size: 14px;
 			line-height: 18px;
@@ -157,6 +159,22 @@
 					background: #fff;
 					color: #333;
 				}
+
+				&.defalut{
+					color: #fff;
+					background: $dw-color-primary;
+				}
+
+				&.reverse{
+					color: $dw-color-primary;
+					background: #fff;
+					border: 1px solid $dw-color-primary;
+
+					&:hover{
+						color: $dw-color-primary-hover;
+						border: 1px solid $dw-color-primary-hover;
+					}
+				}
 			}
 		}
 	}
@@ -193,6 +211,22 @@
 				&.no_bg{
 					background: #fff;
 					color: #333;
+				}
+
+				&.defalut{
+					color: #fff;
+					background: $dw-color-success;
+				}
+
+				&.reverse{
+					color: $dw-color-success;
+					background: #fff;
+					border: 1px solid $dw-color-success;
+
+					&:hover{
+						color: $dw-color-success-hover;
+						border: 1px solid $dw-color-success-hover;
+					}
 				}
 			}
 		}
@@ -231,6 +265,22 @@
 					background: #fff;
 					color: #333;
 				}
+
+				&.defalut{
+					color: #fff;
+					background: $dw-color-danger;
+				}
+
+				&.reverse{
+					color: $dw-color-danger;
+					background: #fff;
+					border: 1px solid $dw-color-danger;
+
+					&:hover{
+						color: $dw-color-danger-hover;
+						border: 1px solid $dw-color-danger-hover;
+					}
+				}
 			}
 		}
 	}
@@ -267,6 +317,22 @@
 				&.no_bg{
 					background: #fff;
 					color: #333;
+				}
+
+				&.defalut{
+					color: #fff;
+					background: $dw-color-warning;
+				}
+
+				&.reverse{
+					color: $dw-color-warning;
+					background: #fff;
+					border: 1px solid $dw-color-warning;
+
+					&:hover{
+						color: $dw-color-warning-hover;
+						border: 1px solid $dw-color-warning-hover;
+					}
 				}
 			}
 		}

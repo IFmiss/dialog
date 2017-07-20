@@ -153,9 +153,21 @@
 	      height:             'auto',                     //高度
 	      padding:            '10px 16px',                //padding
 	      title:              '提示!',                    //提醒信息
+	      titleFontSize: 	  '20px', 					  //title的字体大小
 	      discription:        '这是弹窗的描述!',          //描述
+	      discriptionFontSize:'16px', 					  //描述的字体大小
 	      borderRadius:       '4px',                      //圆角
-	      buttons:            ['确定','取消'],            //按钮信息
+	      buttons:            [							  //按钮信息 (最多两个)
+	      						{						  
+	      							name: '确定',
+	      							className: 'defalut'
+	      						},{
+	      							name: '取消',
+	      							className: 'defalut'
+	      						}
+	      					  ],
+	      buttonsFontSize: 	  '14px', 					  // 按钮的字体大小
+	      buttonsPadding: 	  '4px 20px', 				  // 按钮的padding
 	      maskBg:             'rgba(0,0,0,0.6)',          //遮罩层背景色
 	      dialogBg:           '#fff',                     //弹出框的背景色
 	      type:               'defalut',                  //类型 defalut primary   success  danger  warning
@@ -194,7 +206,8 @@
 	    var _overflowBtn = function(){
 	    	// buttons超过两个提示
 		    if(opt.buttons.length>2){
-		       $dw.showMessage('按钮的最多显示上限不超过2个',3000,false);
+		       alert('按钮的最多显示上限不超过2个');
+		       return;
 		    }
 	    }
 
@@ -209,7 +222,7 @@
 	    	//获取点击的索引
 	      	var btnName = name || '';
 	      		for(var i = 0;i<opt.buttons.length;i++){
-	        		if(btnName === opt.buttons[i]){
+	        		if(btnName === opt.buttons[i].name){
 	          		btnIndex = i;
 	        	}
 	      	}
@@ -254,10 +267,10 @@
 				'transform':'translate(-50%,-50%)',
 		    }).appendTo($this);
 
-		    _this.title_dialog = $("<div class='title_dialog'></div>").html(opt.title).appendTo(_this.dialog_div);
+		    _this.title_dialog = $("<div class='title_dialog'></div>").html(opt.title).css('font-size',opt.titleFontSize).appendTo(_this.dialog_div);
 
 		    if(!opt.isInput){
-		    	_this.discription_dialog = $("<div class='discription_dialog'></div>").html(opt.discription).appendTo(_this.dialog_div);
+		    	_this.discription_dialog = $("<div class='discription_dialog'></div>").html(opt.discription).css('font-size',opt.discriptionFontSize).appendTo(_this.dialog_div);
 		    }else{
 		    	_this.discription_dialog = $("<div class='discription_dialog'></div>").css({
 		    		'text-indent':0,
@@ -266,12 +279,11 @@
 		    }
 		    
 		    _this.dialog_divOperation = $("<div class='dialog_divOperation'></div>").appendTo(_this.dialog_div);
-
 		    if(!(opt.buttons.length === 2)){
-		     	_this.firstBtn = $("<span class='btn_span "+btn_className+"'></span>").html(opt.buttons[0]).attr({'data-name':opt.buttons[0]}).appendTo(_this.dialog_divOperation);
+		     	_this.firstBtn = $("<span class='btn_span "+btn_className+" "+opt.buttons[0].className+"'></span>").html(opt.buttons[0].name).attr({'data-name':opt.buttons[0].name}).css({'padding':opt.buttonsPadding,'font-size':opt.buttonsFontSize}).appendTo(_this.dialog_divOperation);
 		    }else{
-		     	_this.firstBtn = $("<span class='btn_span "+btn_className+"'></span>").html(opt.buttons[0]).attr({'data-name':opt.buttons[0]}).appendTo(_this.dialog_divOperation);
-		     	_this.secondBtn = $("<span class='btn_span "+btn_className+"'></span>").html(opt.buttons[1]).attr({'data-name':opt.buttons[1]}).appendTo(_this.dialog_divOperation);
+		     	_this.firstBtn = $("<span class='btn_span "+btn_className+" "+opt.buttons[0].className+"'></span>").html(opt.buttons[0].name).attr({'data-name':opt.buttons[0].name}).css({'padding':opt.buttonsPadding,'font-size':opt.buttonsFontSize}).appendTo(_this.dialog_divOperation);
+		     	_this.secondBtn = $("<span class='btn_span "+btn_className+" "+opt.buttons[1].className+"'></span>").html(opt.buttons[1].name).attr({'data-name':opt.buttons[1].name}).css({'padding':opt.buttonsPadding,'font-size':opt.buttonsFontSize}).appendTo(_this.dialog_divOperation);
 		    }
 
 		 //    setTimeout(function(){
@@ -317,10 +329,10 @@
 				'transform':'translate(-50%,-50%)',
 		    }).appendTo($this);
 
-		    _this.title_dialog = $("<div class='title_dialog'></div>").html(opt.title).appendTo(_this.dialog_div);
+		    _this.title_dialog = $("<div class='title_dialog'></div>").html(opt.title).css('font-size',opt.titleFontSize).appendTo(_this.dialog_div);
 
 		    if(!opt.isInput){
-		    	_this.discription_dialog = $("<div class='discription_dialog'></div>").html(opt.discription).appendTo(_this.dialog_div);
+		    	_this.discription_dialog = $("<div class='discription_dialog'></div>").html(opt.discription).css('font-size',opt.discriptionFontSize).appendTo(_this.dialog_div);
 		    }else{
 		    	_this.discription_dialog = $("<div class='discription_dialog'></div>").css({
 		    		'text-indent':0,
@@ -331,10 +343,10 @@
 		    _this.dialog_divOperation = $("<div class='dialog_divOperation'></div>").appendTo(_this.dialog_div);
 
 		    if(!(opt.buttons.length === 2)){
-		     	_this.firstBtn = $("<span class='btn_span "+btn_className+"'></span>").html(opt.buttons[0]).attr({'data-name':opt.buttons[0]}).appendTo(_this.dialog_divOperation);
+		     	_this.firstBtn = $("<span class='btn_span "+btn_className+" "+opt.buttons[0].className+"'></span>").html(opt.buttons[0].name).attr({'data-name':opt.buttons[0].name}).css({'padding':opt.buttonsPadding,'font-size':opt.buttonsFontSize}).appendTo(_this.dialog_divOperation);
 		    }else{
-		     	_this.firstBtn = $("<span class='btn_span "+btn_className+"'></span>").html(opt.buttons[0]).attr({'data-name':opt.buttons[0]}).appendTo(_this.dialog_divOperation);
-		     	_this.secondBtn = $("<span class='btn_span "+btn_className+"'></span>").html(opt.buttons[1]).attr({'data-name':opt.buttons[1]}).appendTo(_this.dialog_divOperation);
+		     	_this.firstBtn = $("<span class='btn_span "+btn_className+" "+opt.buttons[0].className+"'></span>").html(opt.buttons[0].name).attr({'data-name':opt.buttons[0].name}).css({'padding':opt.buttonsPadding,'font-size':opt.buttonsFontSize}).appendTo(_this.dialog_divOperation);
+		     	_this.secondBtn = $("<span class='btn_span "+btn_className+" "+opt.buttons[1].className+"'></span>").html(opt.buttons[1].name).attr({'data-name':opt.buttons[1].name}).css({'padding':opt.buttonsPadding,'font-size':opt.buttonsFontSize}).appendTo(_this.dialog_divOperation);
 		    }
 
 		    setTimeout(function(){

@@ -169,7 +169,7 @@ body {
   padding: 14px 0 10px 0;
   font-size: 14px;
   text-indent: 16px;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 /* line 74, ../sass/dialog.scss */
 .div_dialog .discription_dialog .dialog_input {
@@ -210,22 +210,25 @@ body {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-  padding: 3px 2px;
   justify-content: flex-end;
   float: right;
-  height: 32px;
+  min-height: 36px;
+  line-height: 36px;
 }
-/* line 108, ../sass/dialog.scss */
+/* line 109, ../sass/dialog.scss */
 .div_dialog .dialog_divOperation .btn_span {
   display: -webkit-flex;
   display: flex;
   @justify-content (center);
   -webkit-align-items: center;
   align-items: center;
-  padding: 3px 10px;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
+  height: 20px;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
   cursor: pointer;
   font-size: 14px;
   line-height: 18px;
@@ -234,147 +237,211 @@ body {
   -webkit-user-select: none;
   user-select: none;
 }
-/* line 121, ../sass/dialog.scss */
+/* line 123, ../sass/dialog.scss */
 .div_dialog .dialog_divOperation .btn_span:first-child {
   margin-right: 10px;
 }
-/* line 128, ../sass/dialog.scss */
+/* line 130, ../sass/dialog.scss */
 .div_dialog.primary .div_dialog {
   -moz-box-shadow: 0px 0px 3px 0px #4D96DF;
   -webkit-box-shadow: 0px 0px 3px 0px #4D96DF;
   box-shadow: 0px 0px 3px 0px #4D96DF;
 }
-/* line 131, ../sass/dialog.scss */
+/* line 133, ../sass/dialog.scss */
 .div_dialog.primary .div_dialog.no_boxShadow {
   -moz-box-shadow: 0px 0px 0px 0px #fff;
   -webkit-box-shadow: 0px 0px 0px 0px #fff;
   box-shadow: 0px 0px 0px 0px #fff;
 }
-/* line 136, ../sass/dialog.scss */
+/* line 138, ../sass/dialog.scss */
 .div_dialog.primary .title_dialog {
   color: #588CD2;
   border-bottom: 1px dashed #4D96DF;
 }
-/* line 141, ../sass/dialog.scss */
+/* line 143, ../sass/dialog.scss */
 .div_dialog.primary .discription_dialog {
   color: #313234;
 }
-/* line 146, ../sass/dialog.scss */
+/* line 148, ../sass/dialog.scss */
 .div_dialog.primary .dialog_divOperation .btn_span {
   color: #fff;
   background: #4D96DF;
 }
-/* line 152, ../sass/dialog.scss */
+/* line 154, ../sass/dialog.scss */
 .div_dialog.primary .dialog_divOperation .btn_span:hover {
   background: #4684C3;
 }
-/* line 156, ../sass/dialog.scss */
+/* line 158, ../sass/dialog.scss */
 .div_dialog.primary .dialog_divOperation .btn_span.no_bg {
   background: #fff;
   color: #333;
 }
-/* line 165, ../sass/dialog.scss */
+/* line 163, ../sass/dialog.scss */
+.div_dialog.primary .dialog_divOperation .btn_span.defalut {
+  color: #fff;
+  background: #4D96DF;
+}
+/* line 168, ../sass/dialog.scss */
+.div_dialog.primary .dialog_divOperation .btn_span.reverse {
+  color: #4D96DF;
+  background: #fff;
+  border: 1px solid #4D96DF;
+}
+/* line 173, ../sass/dialog.scss */
+.div_dialog.primary .dialog_divOperation .btn_span.reverse:hover {
+  color: #4684C3;
+  border: 1px solid #4684C3;
+}
+/* line 183, ../sass/dialog.scss */
 .div_dialog.success .div_dialog {
   -moz-box-shadow: 0px 0px 3px 0px #21B384;
   -webkit-box-shadow: 0px 0px 3px 0px #21B384;
   box-shadow: 0px 0px 3px 0px #21B384;
 }
-/* line 168, ../sass/dialog.scss */
+/* line 186, ../sass/dialog.scss */
 .div_dialog.success .div_dialog.no_boxShadow {
   -moz-box-shadow: 0px 0px 0px 0px #fff;
   -webkit-box-shadow: 0px 0px 0px 0px #fff;
   box-shadow: 0px 0px 0px 0px #fff;
 }
-/* line 173, ../sass/dialog.scss */
+/* line 191, ../sass/dialog.scss */
 .div_dialog.success .title_dialog {
   color: #6EB279;
   border-bottom: 1px dashed #21B384;
 }
-/* line 178, ../sass/dialog.scss */
+/* line 196, ../sass/dialog.scss */
 .div_dialog.success .discription_dialog {
   color: #283528;
 }
-/* line 183, ../sass/dialog.scss */
+/* line 201, ../sass/dialog.scss */
 .div_dialog.success .dialog_divOperation .btn_span {
   color: #fff;
   background: #21B384;
 }
-/* line 189, ../sass/dialog.scss */
+/* line 207, ../sass/dialog.scss */
 .div_dialog.success .dialog_divOperation .btn_span:hover {
   background: #28A47C;
 }
-/* line 193, ../sass/dialog.scss */
+/* line 211, ../sass/dialog.scss */
 .div_dialog.success .dialog_divOperation .btn_span.no_bg {
   background: #fff;
   color: #333;
 }
-/* line 202, ../sass/dialog.scss */
+/* line 216, ../sass/dialog.scss */
+.div_dialog.success .dialog_divOperation .btn_span.defalut {
+  color: #fff;
+  background: #21B384;
+}
+/* line 221, ../sass/dialog.scss */
+.div_dialog.success .dialog_divOperation .btn_span.reverse {
+  color: #21B384;
+  background: #fff;
+  border: 1px solid #21B384;
+}
+/* line 226, ../sass/dialog.scss */
+.div_dialog.success .dialog_divOperation .btn_span.reverse:hover {
+  color: #28A47C;
+  border: 1px solid #28A47C;
+}
+/* line 236, ../sass/dialog.scss */
 .div_dialog.danger .div_dialog {
   -moz-box-shadow: 0px 0px 3px 0px #D9534F;
   -webkit-box-shadow: 0px 0px 3px 0px #D9534F;
   box-shadow: 0px 0px 3px 0px #D9534F;
 }
-/* line 205, ../sass/dialog.scss */
+/* line 239, ../sass/dialog.scss */
 .div_dialog.danger .div_dialog.no_boxShadow {
   -moz-box-shadow: 0px 0px 0px 0px #fff;
   -webkit-box-shadow: 0px 0px 0px 0px #fff;
   box-shadow: 0px 0px 0px 0px #fff;
 }
-/* line 210, ../sass/dialog.scss */
+/* line 244, ../sass/dialog.scss */
 .div_dialog.danger .title_dialog {
   color: #C54D54;
   border-bottom: 1px dashed #D9534F;
 }
-/* line 215, ../sass/dialog.scss */
+/* line 249, ../sass/dialog.scss */
 .div_dialog.danger .discription_dialog {
   color: #4F3536;
 }
-/* line 220, ../sass/dialog.scss */
+/* line 254, ../sass/dialog.scss */
 .div_dialog.danger .dialog_divOperation .btn_span {
   color: #fff;
   background: #D9534F;
 }
-/* line 226, ../sass/dialog.scss */
+/* line 260, ../sass/dialog.scss */
 .div_dialog.danger .dialog_divOperation .btn_span:hover {
   background: #C74743;
 }
-/* line 230, ../sass/dialog.scss */
+/* line 264, ../sass/dialog.scss */
 .div_dialog.danger .dialog_divOperation .btn_span.no_bg {
   background: #fff;
   color: #333;
 }
-/* line 239, ../sass/dialog.scss */
+/* line 269, ../sass/dialog.scss */
+.div_dialog.danger .dialog_divOperation .btn_span.defalut {
+  color: #fff;
+  background: #D9534F;
+}
+/* line 274, ../sass/dialog.scss */
+.div_dialog.danger .dialog_divOperation .btn_span.reverse {
+  color: #D9534F;
+  background: #fff;
+  border: 1px solid #D9534F;
+}
+/* line 279, ../sass/dialog.scss */
+.div_dialog.danger .dialog_divOperation .btn_span.reverse:hover {
+  color: #C74743;
+  border: 1px solid #C74743;
+}
+/* line 289, ../sass/dialog.scss */
 .div_dialog.warning .div_dialog {
   -moz-box-shadow: 0px 0px 3px 0px #FFBD7A;
   -webkit-box-shadow: 0px 0px 3px 0px #FFBD7A;
   box-shadow: 0px 0px 3px 0px #FFBD7A;
 }
-/* line 242, ../sass/dialog.scss */
+/* line 292, ../sass/dialog.scss */
 .div_dialog.warning .div_dialog.no_boxShadow {
   -moz-box-shadow: 0px 0px 0px 0px #fff;
   -webkit-box-shadow: 0px 0px 0px 0px #fff;
   box-shadow: 0px 0px 0px 0px #fff;
 }
-/* line 247, ../sass/dialog.scss */
+/* line 297, ../sass/dialog.scss */
 .div_dialog.warning .title_dialog {
   color: #FFBD7A;
   border-bottom: 1px dashed #FFBD7A;
 }
-/* line 252, ../sass/dialog.scss */
+/* line 302, ../sass/dialog.scss */
 .div_dialog.warning .discription_dialog {
   color: #4F3536;
 }
-/* line 257, ../sass/dialog.scss */
+/* line 307, ../sass/dialog.scss */
 .div_dialog.warning .dialog_divOperation .btn_span {
   color: #fff;
   background: #FFBD7A;
 }
-/* line 263, ../sass/dialog.scss */
+/* line 313, ../sass/dialog.scss */
 .div_dialog.warning .dialog_divOperation .btn_span:hover {
   background: #F0AF6D;
 }
-/* line 267, ../sass/dialog.scss */
+/* line 317, ../sass/dialog.scss */
 .div_dialog.warning .dialog_divOperation .btn_span.no_bg {
   background: #fff;
   color: #333;
+}
+/* line 322, ../sass/dialog.scss */
+.div_dialog.warning .dialog_divOperation .btn_span.defalut {
+  color: #fff;
+  background: #FFBD7A;
+}
+/* line 327, ../sass/dialog.scss */
+.div_dialog.warning .dialog_divOperation .btn_span.reverse {
+  color: #FFBD7A;
+  background: #fff;
+  border: 1px solid #FFBD7A;
+}
+/* line 332, ../sass/dialog.scss */
+.div_dialog.warning .dialog_divOperation .btn_span.reverse:hover {
+  color: #F0AF6D;
+  border: 1px solid #F0AF6D;
 }
