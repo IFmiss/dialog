@@ -166,6 +166,7 @@
 	      							className: 'defalut'
 	      						}
 	      					  ],
+	      showCloseIcon: 	  false, 					  //是否显示关闭弹窗的按钮 (右上方)
 	      buttonsHeight: 	  32,						  // 在设置底部固定相等的时候需要设置button的高   因为js会让他的padding都为0
 	      buttonsSameWidth:   false, 					  // 设置底部按钮是否固定相等占满底部
 	      buttonsFontSize: 	  '14px', 					  // 按钮的字体大小
@@ -268,8 +269,10 @@
 				'-moz-transform':'translate(-50%,-50%)',
 				'transform':'translate(-50%,-50%)',
 		    }).appendTo($this);
-
 		    _this.title_dialog = $("<div class='title_dialog'></div>").html(opt.title).css('font-size',opt.titleFontSize).appendTo(_this.dialog_div);
+		    if (opt.showCloseIcon) {
+		    	_this.title_close = $("<div class='close_dialog'><div class='line1'></div><div class='line2'></div></div>").appendTo(_this.dialog_div);
+		    }
 
 		    if(!opt.isInput){
 		    	_this.discription_dialog = $("<div class='discription_dialog'></div>").html(opt.discription).css('font-size',opt.discriptionFontSize).appendTo(_this.dialog_div);
@@ -335,6 +338,10 @@
 
 		    _this.title_dialog = $("<div class='title_dialog'></div>").html(opt.title).css('font-size',opt.titleFontSize).appendTo(_this.dialog_div);
 
+			if (opt.showCloseIcon) {
+				_this.title_close = $("<div class='close_dialog'><div class='line1'></div><div class='line2'></div></div>").appendTo(_this.dialog_div);
+			}
+
 		    if(!opt.isInput){
 		    	_this.discription_dialog = $("<div class='discription_dialog'></div>").html(opt.discription).css('font-size',opt.discriptionFontSize).appendTo(_this.dialog_div);
 		    }else{
@@ -343,14 +350,18 @@
 		    	}).appendTo(_this.dialog_div);
 		    	_this.input_dialog = $("<input type='text' class='dialog_input' placeholder="+opt.inputPlaceholder+">").appendTo(_this.discription_dialog);
 		    }
+
+		    var buttonsHeight = opt.buttonsSameWidth ? opt.buttonsHeight : 'auto';
+		    var buttonsPadding = opt.buttonsSameWidth ? '0' : opt.buttonsPadding;
+		    var buttonsSameWidthClass = opt.buttonsSameWidth ? 'samewidth' : '';
 		    
-		    _this.dialog_divOperation = $("<div class='dialog_divOperation'></div>").appendTo(_this.dialog_div);
+		    _this.dialog_divOperation = $("<div class='dialog_divOperation " + buttonsSameWidthClass + "'></div>").appendTo(_this.dialog_div);
 
 		    if(!(opt.buttons.length === 2)){
-		     	_this.firstBtn = $("<span class='btn_span "+btn_className+" "+opt.buttons[0].className+"'></span>").html(opt.buttons[0].name).attr({'data-name':opt.buttons[0].name}).css({'padding':opt.buttonsPadding,'font-size':opt.buttonsFontSize}).appendTo(_this.dialog_divOperation);
+		     	_this.firstBtn = $("<span class='btn_span one_btn_span"+btn_className+" "+opt.buttons[0].className+"'></span>").html(opt.buttons[0].name).attr({'data-name':opt.buttons[0].name}).css({'padding':buttonsPadding,'font-size':opt.buttonsFontSize,'height':buttonsHeight,'line-height':buttonsHeight+'px'}).appendTo(_this.dialog_divOperation);
 		    }else{
-		     	_this.firstBtn = $("<span class='btn_span "+btn_className+" "+opt.buttons[0].className+"'></span>").html(opt.buttons[0].name).attr({'data-name':opt.buttons[0].name}).css({'padding':opt.buttonsPadding,'font-size':opt.buttonsFontSize}).appendTo(_this.dialog_divOperation);
-		     	_this.secondBtn = $("<span class='btn_span "+btn_className+" "+opt.buttons[1].className+"'></span>").html(opt.buttons[1].name).attr({'data-name':opt.buttons[1].name}).css({'padding':opt.buttonsPadding,'font-size':opt.buttonsFontSize}).appendTo(_this.dialog_divOperation);
+		     	_this.firstBtn = $("<span class='btn_span "+btn_className+" "+opt.buttons[0].className+"'></span>").html(opt.buttons[0].name).attr({'data-name':opt.buttons[0].name}).css({'padding':buttonsPadding,'font-size':opt.buttonsFontSize,'height':buttonsHeight,'line-height':buttonsHeight+'px'}).appendTo(_this.dialog_divOperation);
+		     	_this.secondBtn = $("<span class='btn_span "+btn_className+" "+opt.buttons[1].className+"'></span>").html(opt.buttons[1].name).attr({'data-name':opt.buttons[1].name}).css({'padding':buttonsPadding,'font-size':opt.buttonsFontSize,'height':buttonsHeight,'line-height':buttonsHeight+'px'}).appendTo(_this.dialog_divOperation);
 		    }
 
 		    setTimeout(function(){
@@ -368,6 +379,32 @@
 	    }else{
 	    	_init();
 	    }
+
+	    _this.title_close.on('click',function(){
+	    	if(!isLowerIe9()){
+                _this.dialog_div.addClass(opt.animateOut).on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',function(){
+                    _this.dialog_div.remove();
+                });
+
+                $('.cpt-dw-dialog-mask').addClass("fadeOut").on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',function(){
+                    $('.cpt-dw-dialog-mask').remove();
+
+                    //可滚动
+                    $('body,html').css({"min-height":0,overflow:'auto'});
+                    $(document.body).css({
+                        'border-right':'none',
+                    })
+                });
+            }else{
+                _this.dialog_div.remove();
+                $('.cpt-dw-dialog-mask').remove();
+                //可滚动
+                $('body,html').css({"min-height":0,overflow:'auto'});
+                $(document.body).css({
+                    'border-right':'none',
+                }); 
+            }
+	    });
 
 	    // 点击的回调
 	    _this.dialog_divOperation.children().on('click',function(e){

@@ -47,6 +47,39 @@
 	// @include flex-direction(column);
 	@include box-shadow(0 3px 10px #aaa);
 
+	.close_dialog{
+		position:absolute;
+		height: 40px;
+		width: 40px;
+		right: -50px;
+		top:-50px;
+		// @include border-radius(50%);
+		// border:2px solid #fff;
+		cursor: pointer;
+		.line1{
+			position:absolute;
+			top: 50%;
+			left:50%;
+			width: 30px;
+			height: 2px;
+			background: #fff;
+			margin:0 auto;
+			-webkit-transform: translate(-50%,-50%) rotate(-45deg);
+			transform: translate(-50%,-50%) rotate(-45deg);
+		}
+		.line2{
+			position:absolute;
+			top: 50%;
+			left:50%;
+			width: 30px;
+			height: 2px;
+			background: #fff;
+			margin:0 auto;
+			-webkit-transform: translate(-50%,-50%) rotate(-45deg);
+			transform: translate(-50%,-50%) rotate(45deg);
+		}
+	}
+
 	&.no_boxShadow{
 		@include box-shadow(none);
 	}
@@ -59,6 +92,7 @@
 		white-space: nowrap;
 		padding: 10px 0;
 		height: 40px;
+		position: relative;
 		@include box-sizing(border-box);
 	}
 	
