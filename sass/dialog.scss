@@ -59,12 +59,13 @@
 		white-space: nowrap;
 		padding: 10px 0;
 		height: 40px;
+		@include box-sizing(border-box);
 	}
 	
 	.discription_dialog{
 		// @include flex-grow(1);
 		// @include flex(1);
-		padding: 14px 0 10px 0;
+		padding: 16px 0 14px 0;
 		font-size: 14px;
 		text-indent: 16px;
 		line-height: 1.5;
@@ -102,9 +103,35 @@
 		white-space: nowrap;
 		justify-content: flex-end;
 		float: right;
-		min-height: 36px;
-		line-height: 36px;
+		min-height: 32px;
+		line-height: 32px;
 		// height: 32px;
+
+		&.samewidth{
+			width: 100%;
+			.btn_span{
+				display: block;
+				text-align: center;
+				width: calc(50% - 10px);
+				@include box-sizing(border-box);
+				height: 100%;
+				line-height: 1.5;
+				@include flex(1);
+				&.one_btn_span{
+					margin:0!important;
+					width: 100%;
+					float: none!important;
+				}
+				&:first-child{
+					margin-right: 10px;
+					float: left;
+				}
+				&:last-child{
+					margin-left: 10px;
+					float: right;
+				}
+			}
+		}
 		
 		.btn_span{
 			@include display-flex;
