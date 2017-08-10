@@ -197,7 +197,7 @@
 		}
 
 		.title_dialog{
-			color: #588CD2;
+			color: $dw-color-primary;
 			border-bottom:1px dashed $dw-color-primary;
 		}
 
@@ -250,7 +250,7 @@
 		}
 
 		.title_dialog{
-			color: #6EB279;
+			color: $dw-color-success;
 			border-bottom:1px dashed $dw-color-success;
 		}
 
@@ -303,7 +303,7 @@
 		}
 
 		.title_dialog{
-			color: #C54D54;
+			color: $dw-color-danger;
 			border-bottom:1px dashed $dw-color-danger;
 		}
 

@@ -380,31 +380,33 @@
 	    	_init();
 	    }
 
-	    _this.title_close.on('click',function(){
-	    	if(!isLowerIe9()){
-                _this.dialog_div.addClass(opt.animateOut).on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',function(){
-                    _this.dialog_div.remove();
-                });
+	    if(opt.showCloseIcon){
+		    _this.title_close.on('click',function(){
+		    	if(!isLowerIe9()){
+	                _this.dialog_div.addClass(opt.animateOut).on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',function(){
+	                    _this.dialog_div.remove();
+	                });
 
-                $('.cpt-dw-dialog-mask').addClass("fadeOut").on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',function(){
-                    $('.cpt-dw-dialog-mask').remove();
+	                $('.cpt-dw-dialog-mask').addClass("fadeOut").on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',function(){
+	                    $('.cpt-dw-dialog-mask').remove();
 
-                    //可滚动
-                    $('body,html').css({"min-height":0,overflow:'auto'});
-                    $(document.body).css({
-                        'border-right':'none',
-                    })
-                });
-            }else{
-                _this.dialog_div.remove();
-                $('.cpt-dw-dialog-mask').remove();
-                //可滚动
-                $('body,html').css({"min-height":0,overflow:'auto'});
-                $(document.body).css({
-                    'border-right':'none',
-                }); 
-            }
-	    });
+	                    //可滚动
+	                    $('body,html').css({"min-height":0,overflow:'auto'});
+	                    $(document.body).css({
+	                        'border-right':'none',
+	                    })
+	                });
+	            }else{
+	                _this.dialog_div.remove();
+	                $('.cpt-dw-dialog-mask').remove();
+	                //可滚动
+	                $('body,html').css({"min-height":0,overflow:'auto'});
+	                $(document.body).css({
+	                    'border-right':'none',
+	                }); 
+	            }
+		    });
+	    }
 
 	    // 点击的回调
 	    _this.dialog_divOperation.children().on('click',function(e){

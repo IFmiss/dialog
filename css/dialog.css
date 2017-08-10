@@ -325,7 +325,7 @@ body {
 }
 /* line 199, ../sass/dialog.scss */
 .div_dialog.primary .title_dialog {
-  color: #588CD2;
+  color: #4D96DF;
   border-bottom: 1px dashed #4D96DF;
 }
 /* line 204, ../sass/dialog.scss */
@@ -376,7 +376,7 @@ body {
 }
 /* line 252, ../sass/dialog.scss */
 .div_dialog.success .title_dialog {
-  color: #6EB279;
+  color: #21B384;
   border-bottom: 1px dashed #21B384;
 }
 /* line 257, ../sass/dialog.scss */
@@ -427,7 +427,7 @@ body {
 }
 /* line 305, ../sass/dialog.scss */
 .div_dialog.danger .title_dialog {
-  color: #C54D54;
+  color: #D9534F;
   border-bottom: 1px dashed #D9534F;
 }
 /* line 310, ../sass/dialog.scss */
